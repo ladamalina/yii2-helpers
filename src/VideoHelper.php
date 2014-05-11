@@ -36,4 +36,10 @@ class VideoHelper
 
         return false;
     }
+
+    public static function embedCode($url, $width = 640, $height = 480) {
+        $id = self::getId($url);
+
+        return $id ? "<iframe width='{$width}' height='{$height}' src='//www.youtube.com/embed/{$id}' frameborder='0' allowfullscreen></iframe>" : '';
+    }
 }
